@@ -1,0 +1,288 @@
+
+/* large  device */
+@media (max-width:1200px){
+    
+
+    .banner__overlay h6{
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 0px;
+      }
+    .banner__overlay h1{
+      font-size: 48px;
+    }
+    .banner__overlay h1 span{
+        margin-top: 0px;
+    }
+    .banner__overlay  p{
+      padding: 0 !important;
+      margin-bottom: 25px;
+    }
+    .banner__play {
+      font-size: 14px;
+    }
+ 
+    .play__responsive{
+        left: 220px  !important;
+    }
+
+    .main{
+        margin-top: 20px;
+    }   
+    .people__text p{
+        margin-bottom: 8px !important;
+        padding-top: 0 !important;
+        font-size: 18px;
+    }
+    .about-img img {
+        width: 100%;
+        display: block;
+        margin-top: 70px;
+    }
+    .ftr-msg {
+        margin-top: 50px;
+    }
+
+}
+
+ /* mediam device */
+ @media (max-width:991px){
+    nav{
+        background: rgba(0, 0, 0, 0.5);
+    }
+    nav button i{
+       color: #ffffff;
+    }
+    nav .container{
+        padding: 0 !important;
+    }
+
+    nav ul{
+
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        padding: 20% 0 0 0;
+        border-radius: 5px;
+        height: 100vh;
+
+     
+    }
+    nav ul li a{
+        color: #000000 !important;
+    }   
+    nav ul li a:hover{
+      color: #fa8072 !important;
+    }
+    nav ul li a::after,
+    nav ul li a::before{
+        display: none;
+    } 
+    #banner__part{
+        text-align: center;
+
+    }
+    .banner__overlay h6{
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 5px;
+      }
+    .banner__overlay h1{
+      font-size: 48px;
+    }
+    .banner__overlay h1 span{
+        margin-top: 0px;
+    }
+    .banner__overlay  p{
+      padding: 0 !important;
+      margin-bottom: 25px;
+    }
+    .banner__play {
+      font-size: 14px;
+    }
+    .play__responsive{
+        left: 480px !important;
+    }
+
+    .main{
+        margin-top: 20px;
+    }   
+    .people__text p{
+        margin-bottom: 8px !important;
+        padding-top: 0 !important;
+        font-size: 18px;
+    }
+    .about-img img {
+        width: 100%;
+        display: block;
+        margin-top: 70px;
+    }
+    .ftr-msg {
+        margin-top: 50px;
+    }
+
+    
+
+}
+
+
+/* small device */
+@media (max-width:767px){
+    nav{
+        background: rgba(0, 0, 0, 0.5);
+    }
+    nav button i{
+       color: #ffffff;
+    }
+    nav .container{
+        padding: 0 !important;
+    }
+
+    nav ul{
+        background-color: white;
+        text-align: center;
+        padding: 40% 0 0 0;
+        border-radius: 5px;
+        height: 100vh;
+
+     
+    }
+    nav ul li a{
+        color: #000000 !important;
+    }   
+    nav ul li a:hover{
+      color: #fa8072 !important;
+    }
+    nav ul li a::after,
+    nav ul li a::before{
+        display: none;
+    } 
+    #banner__part{
+        text-align: center;
+
+    }
+    .banner__overlay h6{
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 15px;
+      }
+    .banner__overlay h1{
+      font-size: 42px;
+    }
+    .banner__overlay  p{
+      padding: 0 !important;
+      margin-bottom: 25px;
+    }
+    .banner__play {
+      font-size: 14px;
+    }
+    .play__responsive{
+        left: 390px  !important;
+    }
+
+     .main{
+         margin-top: 20px;
+     }   
+
+
+}
+/* extra small device */
+@media (max-width:575px){
+    .banner__overlay{
+        padding: 200px 0 150px 0;
+    }
+    nav{
+        background: rgba(0, 0, 0, 0.5);
+    }
+    nav  a img{
+        width: 50% !important;
+        padding-left: 15px;
+    }
+    nav button i{
+       color: #ffffff;
+    }
+    nav .container{
+        padding: 0 !important;
+    }
+
+    nav ul{
+        background-color: white;
+        text-align: center;
+        padding: 40% 0 0 0;
+        border-radius: 5px;
+        height: 100vh;
+
+     
+    }
+    nav ul li a{
+        color: #000000 !important;
+    }   
+    nav ul li a:hover{
+      color: #fa8072 !important;
+    }
+    nav ul li a::after,
+    nav ul li a::before{
+        display: none;
+    } 
+    #banner__part{
+        text-align: center;
+
+    }
+    .banner__overlay h6{
+        font-size: 14px;
+        font-weight: 400;
+      }
+    .banner__overlay h1{
+      font-size: 42px;
+    }
+    .banner__overlay  p{
+      padding: 0 !important;
+      margin-bottom: 25px;
+    }
+    .banner__play {
+      font-size: 14px;
+    }
+    .play__responsive {
+        right: 352px !important;
+    }
+     .main{
+         margin-top: 20px;
+     } 
+     #service__part{
+         margin-top: 35px;
+     }  
+     #service__part .title h4{
+        font-size: 30px;
+        font-weight: 500;
+        margin-top: 10px;
+
+    
+    }
+    .service h2{
+        margin-top: 25px;
+        font-size: 20px;
+    }
+    #service__part{
+        padding: 20px  0;
+     }
+     .main{
+         flex-wrap: wrap;
+     }
+     .people__img{
+        width: 100%;
+    }
+    .people__text{
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .choose__card{
+     margin-left: 0px;
+     width: 100%;
+    }
+    #getin__touch .ftr-msg{
+    margin-top: 25px;
+   }
+
+
+}

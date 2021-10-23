@@ -41,12 +41,12 @@
             <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i data-feather="more-horizontal"></i>
             </li>
 
-            <li class=" nav-item">
+            {{-- <li class=" nav-item">
                 <a class="d-flex align-items-center" href="app-email.html">
                     <i data-feather="mail"></i>
                     <span class="menu-title text-truncate" data-i18n="Email">Email</span>
                 </a>
-            </li>
+            </li> --}}
             {{-- Banners start --}}
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="#">
@@ -55,9 +55,9 @@
                 </a>
                 <ul class="menu-content">
                     <li class="@yield('bannersIndex')">
-                        <a class="d-flex align-items-center" href="">
+                        <a class="d-flex align-items-center" href="{{ route('banners.index') }}">
                             <i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="List">Index</span>
+                            <span class="menu-item text-truncate" data-i18n="List">List</span>
                         </a>
                     </li>
                     <li  class="@yield('bannersCreate')">
@@ -68,15 +68,100 @@
                     </li>
                 </ul>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Invoice</span></a>
+            {{-- Services start --}}
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#">
+                    <i data-feather='server'></i>
+                    <span class="menu-title text-truncate" data-i18n="Invoice">Service</span>
+                </a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">List</span></a>
+                    <li class="@yield('servicesIndex')">
+                        <a class="d-flex align-items-center" href="{{ route('services.index') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="List">List</span>
+                        </a>
                     </li>
-                    <li><a class="d-flex align-items-center" href="app-invoice-preview.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Preview</span></a>
+                    <li  class="@yield('servicesCreate')">
+                        <a class="d-flex align-items-center" href="{{ route('services.create') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Preview">Create</span>
+                        </a>
                     </li>
-                    <li><a class="d-flex align-items-center" href="app-invoice-edit.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Edit</span></a>
+                </ul>
+            </li>
+
+            {{-- Testimonials start --}}
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#">
+                    <i data-feather='message-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="Invoice">Testimonial</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="@yield('testimonialsIndex')">
+                        <a class="d-flex align-items-center" href="{{ route('testimonials.index') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="List">List</span>
+                        </a>
                     </li>
-                    <li><a class="d-flex align-items-center" href="app-invoice-add.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">Add</span></a>
+                    <li  class="@yield('testimonialsCreate')">
+                        <a class="d-flex align-items-center" href="{{ route('testimonials.create') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Preview">Create</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            {{-- Clients start --}}
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#">
+                    <i data-feather='users'></i>
+                    <span class="menu-title text-truncate" data-i18n="Invoice">Client</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="@yield('clientsIndex')">
+                        <a class="d-flex align-items-center" href="{{ route('clients.index') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="List">List</span>
+                        </a>
+                    </li>
+                    <li  class="@yield('clientsCreate')">
+                        <a class="d-flex align-items-center" href="{{ route('clients.create') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Preview">Create</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            {{-- Clients start --}}
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#">
+                    <i data-feather='users'></i>
+                    <span class="menu-title text-truncate" data-i18n="Invoice">About</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="@yield('aboutsIndex')">
+                        <a class="d-flex align-items-center" href="{{ route('abouts.index') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="List">Index</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            {{-- Clients start --}}
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#">
+                    <i data-feather='users'></i>
+                    <span class="menu-title text-truncate" data-i18n="Invoice">Choose</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="@yield('choosesIndex')">
+                        <a class="d-flex align-items-center" href="{{ route('chooses.index') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="List">Index</span>
+                        </a>
                     </li>
                 </ul>
             </li>

@@ -2,11 +2,11 @@
 
 {{-- title --}}
 @section('title')
-    {{ config('app.name') }} | Banners 
+    {{ config('app.name') }} | Testimonials 
 @endsection
 
 {{-- menu active --}}
-@section('bannersIndex')
+@section('testimonialsIndex')
     active
 @endsection
 
@@ -18,10 +18,8 @@
             <div class="breadcrumb-wrapper">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="">Banner</a>
+                        <a href="">Testimonial</a>
                     </li>
-                    {{-- <li class="breadcrumb-item active">Layout Empty
-                    </li> --}}
                 </ol>
             </div>
         </div>
@@ -30,11 +28,11 @@
 
 {{-- content --}}
 @section('content')
-<div class="row" id="table-bordered">
-    <div class="col-12">
+<div class="row justify-content-center" id="table-bordered">
+    <div class="col-8">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">List of All Banners</h4>
+                <h4 class="card-title">List of All Testimonial</h4>
                 @if (session('success'))
                 <div class="alert alert-success">{{ session('success') }}</div>
             @endif
@@ -46,10 +44,10 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
-                                    <th>Title</th>
-                                    <th>Short Description</th>
+                                    <th>Name</th>                       
+                                    <th>Designation</th>
                                     <th>Image</th>
-                                    <th>Button Text</th>
+                                    <th>Message</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -57,38 +55,38 @@
                                 @php
                                 $i= 1;   
                                 @endphp
-                                @foreach ($bannerData as $item)
+                                @foreach ($testimonial as $item)
                                 <tr>
                                     <td>
                                         {{ $i }}
                                     </td>
                                     <td>
-                                        {{ $item->title }}
-                                    </td>
-                                     <td>
-                                        {{ substr($item->short_description, 0, 30) }}
+                                        {{ $item->name }}
                                     </td>
                                     <td>
-                                        <img width="100px" src="{{ asset('uploads/banners')}}/{{ $item->image }}" alt="">
+                                        {{ $item->designation }}
                                     </td>
                                     <td>
-                                        {{ $item->button_text }}
-                                    </td> 
+                                        <img width="100px" src="{{ asset('uploads/testimonials')}}/{{ $item->image }}" alt="">
+                                    </td>
+                                    <td>
+                                        {{ substr($item->message, 0, 30) }}
+                                    </td>
                                     <td>
                                         <div class="dropdown">
                                             <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0 waves-effect waves-float waves-light" data-bs-toggle="dropdown">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="{{ route('banners.show', $item->id) }}">
+                                                <a class="dropdown-item" href="{{ route('testimonials.show', $item->id) }}">
                                                     <i data-feather='eye' class="me-50"></i>
                                                     <span>Show</span>
                                                 </a>
-                                                <a class="dropdown-item" href="{{ route('banners.edit', $item->id) }}">
+                                                <a class="dropdown-item" href="{{ route('testimonials.edit', $item->id) }}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 me-50"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
                                                     <span>Edit</span>
                                                 </a>
-                                                <form class="dropdown-item" action="{{ route('banners.destroy', $item->id) }}" method="POST">
+                                                <form class="dropdown-item" action="{{ route('testimonials.destroy', $item->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash me-50"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>

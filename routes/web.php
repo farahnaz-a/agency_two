@@ -1,7 +1,12 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\ChooseController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,8 +31,24 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
     // Admin Controller
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-    //Banner Controller
+
+    // Banner Controller
     Route::resource('banners', BannerController::class);
+
+    // Service Controller
+    Route::resource('services', ServiceController::class);
+
+    // Testimonial Controller
+    Route::resource('testimonials', TestimonialController::class);
+
+    // Clinet Controller
+    Route::resource('clients', ClientController::class);
+
+    // About Controller
+    Route::resource('abouts', AboutController::class);
+
+    // Choose Controller
+    Route::resource('chooses', ChooseController::class);
 
 
 

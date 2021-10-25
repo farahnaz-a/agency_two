@@ -55,7 +55,26 @@
                                 </div>
                             </div>
                             
+
+                            <style>
+
+                                    .trix-button.trix-button--icon.trix-button--icon-attach, .trix-button-group.trix-button-group--file-tools{
+                                        display: none;
+                                    }
+
+                            </style>
+
                             <div class="col-12">
+                                <div class="mb-1">
+                                    <label class="form-label" for="description">Description</label>
+                                        <input id="description" type="hidden" name="description" value="{{ $about->description }}">
+                                        <trix-editor input="description"></trix-editor>
+                                    @error('description')
+                                        <span class="text-danger"> {{ $message }} *</span>
+                                    @enderror  
+                                </div>
+                            </div>
+                            {{-- <div class="col-12">
                                 <div class="mb-1">
                                     <label class="form-label" for="description">Description</label>
                                     <textarea class="form-control" name="description" id="description" > {{ $about->description }}</textarea>
@@ -63,7 +82,7 @@
                                         <span class="text-danger"> {{ $message }} *</span>
                                     @enderror  
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-12">
                                 <div class="mb-1">
                                     <label class="form-label" for="image">Image</label>

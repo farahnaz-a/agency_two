@@ -1,11 +1,12 @@
 @extends('layouts.dashboard')
+
 {{-- title --}}
 @section('title')
-    {{ config('app.name') }} | Edit Services 
+    {{ config('app.name') }} | Create Socials
 @endsection
 
 {{-- menu active --}}
-@section('servicesIndex')
+@section('socialsCreate')
     active
 @endsection
 
@@ -17,7 +18,7 @@
             <div class="breadcrumb-wrapper">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="">Service</a>
+                        <a href="">Social</a>
                     </li>
                     {{-- <li class="breadcrumb-item active">Layout Empty
                     </li> --}}
@@ -26,53 +27,48 @@
         </div>
     </div>
 @endsection
+
 {{-- content --}}
 @section('content')
     <div class="row justify-content-center">
         <div class="col-md-8 col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Edit Service</h4>
+                    <h4 class="card-title">Create Social</h4>
                     @if (session('warning'))
                         <div class="alert alert-warning">{{ session('warning') }}</div>
                     @endif
 
                 </div>
                 <div class="card-body">
-                    <form class="form form-vertical" action="{{ route('services.update',$service->id) }}" method="POST" enctype="multipart/form-data">
+                    <form class="form form-vertical" action="{{ route('socials.store') }}" method="POST">
                         @csrf
-                        @method('PUT')
                         <div class="row">
                             <div class="col-12">
                                 <div class="mb-1">
-                                    <label class="form-label" for="first-name-vertical">Title</label>
-                                    <input type="text" id="first-name-vertical" class="form-control" name="title" value="{{ $service->title }}">
-                                    @error('title')
-                                        <span class="text-danger"> {{ $message }} *</span>
-                                    @enderror
-                                </div>
-                            </div>
-                         
-                        
-                            <div class="col-12">
-                                <div class="mb-1">
-                                    <label class="form-label" for="password-vertical">Background Image</label>
-                                    <input type="file" id="password-vertical" class="form-control" name="image">
-                                    @error('image')
+                                    <label class="form-label" for="social_icon">Social Icons</label>
+                                    <input type="text" id="social_icon" class="form-control" name="social_icon" placeholder="Enter Icon URL">
+                                    @error('social_icon')
                                         <span class="text-danger"> {{ $message }} *</span>
                                     @enderror  
                                 </div>
-                                <div class="mb-1">
-                                    <img  class="w-25" src="{{ asset('uploads/services')}}/{{ $service->image }}" alt=""> 
-                                </div>
-
                             </div>
-                           
                             
+                            <div class="col-12">
+                                <div class="mb-1">
+                                    <label class="form-label" for="social_link">Social Link</label>
+                                    <input type="text" id="social_link" class="form-control" name="social_link" placeholder="Enter Social Link">
+                                    @error('social_link')
+                                    <span class="text-danger"> {{ $message }} *</span>
+                                    @enderror
+                                </div>
+                            </div>
 
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary me-1 waves-effect waves-float waves-light">Update</button>
+                                <button type="submit" class="btn btn-primary me-1 waves-effect waves-float waves-light">Submit</button>
                             </div>
+                            
+                            
                         </div>
                     </form>
                 </div>

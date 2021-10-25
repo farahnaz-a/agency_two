@@ -502,24 +502,24 @@ nav ul li a:hover:before{
 .service__mobile-icon{
     width: 80px;
     height: 80px;
-    border-radius: 50%;
-    background: #fa183d;
+    /* border-radius: 50%;
+    background: #fa183d; */
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 28px;
     color: #ffffff;
-    box-shadow: 0px 0px 23px 0px rgba(255,255,255,0.69);
--webkit-box-shadow: 0px 0px 23px 0px rgba(255,255,255,0.69);
--moz-box-shadow: 0px 0px 23px 0px rgba(255,255,255,0.69);
+    /* box-shadow: 0px 0px 23px 0px rgba(255,255,255,0.69); */
+/* -webkit-box-shadow: 0px 0px 23px 0px rgba(255,255,255,0.69); */
+/* -moz-box-shadow: 0px 0px 23px 0px rgba(255,255,255,0.69); */
    margin: 0 auto;
-   margin-top: -10px;
+   /* margin-top: -10px; */
 
 }
 .service:hover .service__mobile-icon{
-    box-shadow: 0px 0px 23px 0px #f0432f;
-    -webkit-box-shadow: 0px 0px 23px 0px #f0432f;
-    -moz-box-shadow: 0px 0px 23px 0px #f0432f;
+    /* box-shadow: 0px 0px 23px 0px #f0432f; */
+    /* -webkit-box-shadow: 0px 0px 23px 0px #f0432f;
+    -moz-box-shadow: 0px 0px 23px 0px #f0432f; */
 }
 .service h2{
     font-size: 24px;

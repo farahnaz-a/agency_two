@@ -103,7 +103,7 @@
                             </div>
                             <div class="col-12">
                                 <div class="mb-1">
-                                    <label class="form-label" for="video_url">Button URL </label>
+                                    <label class="form-label" for="video_url">Video URL </label>
                                     <input type="text" id="video_url" class="form-control" name="video_url" value="{{ $banner->video_url }}" >
                                     @error('video_url')
                                         <span class="text-danger"> {{ $message }} *</span>

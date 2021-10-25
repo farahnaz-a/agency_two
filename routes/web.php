@@ -5,8 +5,15 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\ChooseController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ColorController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FooterController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SettingController;
+use App\Http\Controllers\SocialController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\TitleSettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,12 +27,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
-// Route::get('/admin', function () {
-//     return view('admin.index');
-// });
+Route::get('/',  [FrontendController::class, 'index']);
+ 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
 
@@ -49,7 +52,21 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
     // Choose Controller
     Route::resource('chooses', ChooseController::class);
+    
+    // Social Controller
+    Route::resource('socials', SocialController::class);
 
+    // Contact Controller
+    Route::resource('contacts', ContactController::class);
+
+    // TitleSetting Controller
+    Route::resource('titleSettings', TitleSettingController::class);
+
+    // Setting Controller
+    Route::resource('settings', SettingController::class);
+
+    // Color Controller
+    Route::resource('colors', ColorController::class);
 
 
 });

@@ -5,7 +5,10 @@
     </footer>
     <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
     <!-- END: Footer-->
-
+    
+    <!-- Begin Trix js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.js" integrity="sha512-2RLMQRNr+D47nbLnsbEqtEmgKy67OSCpWJjJM394czt99xj3jJJJBQ43K7lJpfYAYtvekeyzqfZTx2mqoDh7vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- End Trix js-->
 
     <!-- BEGIN: Vendor JS-->
     <script src="{{ asset('dashboard_assets/assets/vendors/js/vendors.min.js') }}"></script>

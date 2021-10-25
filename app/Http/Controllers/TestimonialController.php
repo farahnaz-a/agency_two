@@ -123,6 +123,6 @@ class TestimonialController extends Controller
     public function destroy(Testimonial $testimonial)
     {
         $testimonial->delete();
-        return back();
+        return back()->with('success', 'Deleted Successfully');
     }
 }

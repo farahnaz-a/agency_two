@@ -2,7 +2,7 @@
 <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
-            <li class="nav-item me-auto"><a class="navbar-brand" href="../../../html/ltr/vertical-collapsed-menu-template/index.html"><span class="brand-logo">
+            <li class="nav-item me-auto"><a class="navbar-brand" href="{{ route('admin.dashboard') }}"><span class="brand-logo">
                         <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
                             <defs>
                                 <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
@@ -47,6 +47,7 @@
                     <span class="menu-title text-truncate" data-i18n="Email">Email</span>
                 </a>
             </li> --}}
+
             {{-- Banners start --}}
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="#">
@@ -68,6 +69,24 @@
                     </li>
                 </ul>
             </li>
+            
+            {{-- Abouts start --}}
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#">
+                    <i data-feather='users'></i>
+                    <span class="menu-title text-truncate" data-i18n="Invoice">About</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="@yield('aboutsIndex')">
+                        <a class="d-flex align-items-center" href="{{ route('abouts.index') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="List">Index</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
             {{-- Services start --}}
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="#">
@@ -89,6 +108,23 @@
                     </li>
                 </ul>
             </li>
+
+             {{-- Chooses start --}}
+             <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#">
+                    <i data-feather='users'></i>
+                    <span class="menu-title text-truncate" data-i18n="Invoice">Choose</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="@yield('choosesIndex')">
+                        <a class="d-flex align-items-center" href="{{ route('chooses.index') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="List">Index</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
 
             {{-- Testimonials start --}}
             <li class=" nav-item">
@@ -134,15 +170,54 @@
                 </ul>
             </li>
 
-            {{-- Clients start --}}
+           
+            {{-- Socials start --}}
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="#">
                     <i data-feather='users'></i>
-                    <span class="menu-title text-truncate" data-i18n="Invoice">About</span>
+                    <span class="menu-title text-truncate" data-i18n="Invoice">Social</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="@yield('aboutsIndex')">
-                        <a class="d-flex align-items-center" href="{{ route('abouts.index') }}">
+                    <li class="@yield('socialsIndex')">
+                        <a class="d-flex align-items-center" href="{{ route('socials.index') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="List">List</span>
+                        </a>
+                    </li>
+                    <li  class="@yield('socialsCreate')">
+                        <a class="d-flex align-items-center" href="{{ route('socials.create') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Preview">Create</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            {{-- Contacts start --}}
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#">
+                    <i data-feather='users'></i>
+                    <span class="menu-title text-truncate" data-i18n="Invoice">Contact Message</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="@yield('contactsIndex')">
+                        <a class="d-flex align-items-center" href="{{ route('contacts.index') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="List">List</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            {{-- Title Settings start --}}
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#">
+                    <i data-feather='users'></i>
+                    <span class="menu-title text-truncate" data-i18n="Invoice">Title Settings</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="@yield('titleSettingsIndex')">
+                        <a class="d-flex align-items-center" href="{{ route('titleSettings.index') }}">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="List">Index</span>
                         </a>
@@ -150,21 +225,38 @@
                 </ul>
             </li>
 
-            {{-- Clients start --}}
+            {{--  Settings start --}}
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="#">
                     <i data-feather='users'></i>
-                    <span class="menu-title text-truncate" data-i18n="Invoice">Choose</span>
+                    <span class="menu-title text-truncate" data-i18n="Invoice">Settings</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="@yield('choosesIndex')">
-                        <a class="d-flex align-items-center" href="{{ route('chooses.index') }}">
+                    <li class="@yield('settingsIndex')">
+                        <a class="d-flex align-items-center" href="{{ route('settings.index') }}">
                             <i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="List">Index</span>
                         </a>
                     </li>
                 </ul>
             </li>
+
+            {{--  Colors start --}}
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#">
+                    <i data-feather='users'></i>
+                    <span class="menu-title text-truncate" data-i18n="Invoice">Color Settings</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="@yield('colorsIndex')">
+                        <a class="d-flex align-items-center" href="{{ route('colors.index') }}">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="List">Index</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
         </ul>
     </div>
 </div>

@@ -113,6 +113,6 @@ class ClientController extends Controller
     public function destroy(Client $client)
     {
         $client->delete();
-        return back();
+        return back()->with('success', 'Deleted Successfully');
     }
 }

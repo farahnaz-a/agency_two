@@ -24,24 +24,38 @@
             </div>
             <div class="col-lg-7 col-xl-8 col-xxl-7" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                 <div class="ftr-msg">
-                    <h1 class="msg">Massage Me</h1>
-                    <form action="" method="get">
+                      @if (session('success'))
+                         <div class="alert alert-success">{{ session('success') }}</div>
+                      @endif
+                    <h1 class="msg">Massage Me</h1> 
+                    <form action="{{ route('contacts.store') }}" method="POST" >
+                        @csrf
                         <div class="row">
                             <div class="col-lg-6">
-                                <input type="text" class="form-control" placeholder="Your Name">
+                                <input type="text" name="name" class="form-control" placeholder="Your Name">
+                                    @error('name')
+                                        <span class="text-danger"> {{ $message }} *</span>
+                                    @enderror  
                             </div>
                             <div class="col-lg-6">
-                                <input type="email" class="form-control" placeholder="Your E-mail">
+                                <input type="email" name="email" class="form-control" placeholder="Your E-mail">
+                                    @error('email')
+                                        <span class="text-danger"> {{ $message }} *</span>
+                                    @enderror
                             </div>
                             <div class="col-lg-12">
 
                                 <div class="newsletter">
-                                    <textarea name="" class="form-control" placeholder="Your Massage"></textarea>
+                                    <textarea name="message" class="form-control" placeholder="Your Massage"></textarea>
+                                    @error('message')
+                                        <span class="text-danger"> {{ $message }} *</span>
+                                    @enderror
                                     <div class="nsltr">
-                                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                                        {{-- <a href="#"><i class="fab fa-telegram-plane"></i> </a> --}}
                                     </div>
                                 </div>
                             </div>
+                            <button type="submit"><i class="fab fa-telegram-plane"></i> </button>
                         </div>
                     </form>
                 </div>

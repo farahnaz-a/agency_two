@@ -54,6 +54,14 @@
                                     @enderror  
                                 </div>
                             </div>
+                                <div class="mb-1">
+                                    <label class="form-label" for="description_2">Description_2</label>
+                                    <textarea class="form-control" name="description_2" id="description_2" > {{ $choose->description_2 }}</textarea>
+                                    @error('description_2')
+                                        <span class="text-danger"> {{ $message }} *</span>
+                                    @enderror  
+                                </div>
+                            </div>
                             <div class="col-12">
                                 <div class="mb-1">
                                     <label class="form-label" for="image">Image</label>
@@ -63,7 +71,7 @@
                                     @enderror  
                                 </div>
                                 <div class="mb-1">
-                                    <img  class="w-25" src="{{ asset('uploads/chooses')}}/{{ $choose->image }}" alt=""> 
+                                    <img  width="100px" src="{{ asset('uploads/chooses')}}/{{ $choose->image }}" alt=""> 
                                 </div>
                             </div>
 
@@ -86,7 +94,7 @@
                                     @enderror  
                                 </div>
                                 <div class="mb-1">
-                                    <img  class="w-25" src="{{ asset('uploads/chooses')}}/{{ $choose->block_1_image }}" alt=""> 
+                                    <img  width="100px" src="{{ asset('uploads/chooses')}}/{{ $choose->block_1_image }}" alt=""> 
                                 </div>
                             </div>
 
@@ -108,7 +116,7 @@
                                     @enderror  
                                 </div>
                                 <div class="mb-1">
-                                    <img  class="w-25" src="{{ asset('uploads/chooses')}}/{{ $choose->block_2_image }}" alt=""> 
+                                    <img  width="100px" src="{{ asset('uploads/chooses')}}/{{ $choose->block_2_image }}" alt=""> 
                                 </div>
                             </div>
 
@@ -130,7 +138,7 @@
                                     @enderror  
                                 </div>
                                 <div class="mb-1">
-                                    <img  class="w-25" src="{{ asset('uploads/chooses')}}/{{ $choose->block_3_image }}" alt=""> 
+                                    <img  width="100px" src="{{ asset('uploads/chooses')}}/{{ $choose->block_3_image }}" alt=""> 
                                 </div>
                             </div>
                              
@@ -152,7 +160,7 @@
                                     @enderror  
                                 </div>
                                 <div class="mb-1">
-                                    <img  class="w-25" src="{{ asset('uploads/chooses')}}/{{ $choose->block_4_image }}" alt=""> 
+                                    <img  width="100px" src="{{ asset('uploads/chooses')}}/{{ $choose->block_4_image }}" alt=""> 
                                 </div>
                             </div>
 

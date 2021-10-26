@@ -17,6 +17,7 @@ class CreateChoosesTable extends Migration
             $table->id();
             $table->string('image');
             $table->longText('description');
+            $table->longText('description_2');
             $table->string('block_1_title');
             $table->string('block_1_image');
             $table->string('block_2_title');

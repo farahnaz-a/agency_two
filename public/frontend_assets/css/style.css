@@ -627,7 +627,7 @@ nav ul li a:hover:before{
     border-color: #F25253;
 }
 .choose__card--padding{
-    margin-top: 25px !important;
+    margin-bottom: 25px !important;
 }
 .choose__card i{
     font-size: 44px;

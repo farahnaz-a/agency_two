@@ -1,1 +1,1 @@
-@extends('layouts.dashboard')
+@extends('admin.dashboard.index')

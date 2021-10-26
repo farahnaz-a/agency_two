@@ -38,7 +38,7 @@ class SettingController extends Controller
 
         if($request->file('logo')){
             $logo       = $request->file('logo'); 
-            $filename   = $setting->id . '.' .$logo->extension('logo');
+            $filename   = 'logo.' .$logo->extension('logo');
             $location   = public_path('uploads/settings'); 
 
             $logo->move($location, $filename);
@@ -47,7 +47,7 @@ class SettingController extends Controller
 
         if($request->file('favicon')){
             $favicon     = $request->file('favicon'); 
-            $filename    = $setting->id . '.' .$favicon->extension('favicon');
+            $filename    = 'favicon.' .$favicon->extension('favicon');
             $location    = public_path('uploads/settings'); 
 
             $favicon->move($location, $filename);

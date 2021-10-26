@@ -18,14 +18,14 @@
                   $title    = implode(" ", $title);
               @endphp
               <h2>{{ $title }} <span>{{ $lastIndex }}</span></h2>
-              <p>{!! $abouts->description !!}
-                  </p>
+              <p>{!! $abouts->description !!}</p>
+
               <h4>{{ $titles->social_title }}:</h4>
-          <ul>
-            @foreach ($socials as $item)
-             <li><a href="{{ $item->social_link }}"> {!! $item->social_icon !!} </a></li>
-            @endforeach
-          </ul>
+              <ul>
+                @foreach ($socials as $item)
+                <li><a href="{{ $item->social_link }}"> {!! $item->social_icon !!} </a></li>
+                @endforeach
+              </ul>
             </div>
            </div>
          </div>

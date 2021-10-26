@@ -74,6 +74,8 @@ class ChooseController extends Controller
         $request->validate([
             'image'               => 'image',
             'description'         => 'required',
+            'description_2'       => 'required',
+            'description'         => 'required',
             'block_1_title'       => 'required',
             'block_1_image'       => 'image',
             'block_2_title'       => 'required',
@@ -124,7 +126,8 @@ class ChooseController extends Controller
         $image->move($location, $filename);
          $choose->block_4_image = $filename;
        }
-       $choose->description   = $request->description;
+       $choose->description     = $request->description;
+       $choose->description_2   = $request->description_2;
        $choose->block_1_title   = $request->block_1_title;
        $choose->block_2_title   = $request->block_2_title;
        $choose->block_3_title   = $request->block_3_title;

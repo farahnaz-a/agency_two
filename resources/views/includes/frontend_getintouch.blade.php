@@ -6,19 +6,24 @@
         <div class="row">
             <div class="col-lg-5 col-xl-4 col-xxl-4" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
                 <div class="ftr-lft">
-                    <h1>Get In Touch</h1>
+                    <h1> {{ $titles->getInTouch_title }}</h1>
                     <ul>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i></a> 1234, Parkstreet Avenue, America.</li>
-                        <li><a href="#"><i class="fas fa-envelope"></i></a> portflo@personalportfolio.com</li>
-                        <li><a href="#"><i class="fas fa-globe"></i></a> www.portflopersonal.com</li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i></a> {{ $settings->address }}</li>
+                        <li><a href="#"><i class="fas fa-envelope"></i></a> {{ $settings->email }}</li>
+                        <li><a href="#"><i class="fas fa-phone"></i></a> {{ $settings->phone }}</li>
                     </ul>
-                    <h1>Follow Me</h1>
+                    <h1>Follow Us</h1>
                     <div class="ftr-icon">
-                        <a href="#"> <i class="fab fa-facebook-f"></i></a>
+
+
+                        @foreach ($socials as $item)
+                             <a href="{{ $item->social_link }}"> {!! $item->social_icon !!} </a> 
+                        @endforeach
+                        {{-- <a href="#"> <i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                        <a href="#"><i class="fab fa-behance"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a> --}}
                     </div>
                 </div>
             </div>
@@ -27,7 +32,7 @@
                       @if (session('success'))
                          <div class="alert alert-success">{{ session('success') }}</div>
                       @endif
-                    <h1 class="msg">Massage Me</h1> 
+                    <h1 class="msg">Massage Us</h1> 
                     <form action="{{ route('contacts.store') }}" method="POST" >
                         @csrf
                         <div class="row">

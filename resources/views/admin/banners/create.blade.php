@@ -9,7 +9,7 @@
 @section('bannersCreate')
     active
 @endsection
-@section('activeMenu')
+@section('activeBannersMenu')
 active
 @endsection
 

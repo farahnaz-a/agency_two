@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Responsive Template</title>
+    <title> {{ config('app.name') }}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -37,8 +37,10 @@
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/slick.css')}}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/default.css')}}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/venobox.css')}}">
-    <link rel="stylesheet" href="{{ asset('frontend_assets/css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/responsive.css')}}">
+    {{-- <link rel="stylesheet" href="{{ asset('frontend_assets/css/style.css')}}"> --}}
+    {{-- <link rel="stylesheet" href="@include('includes.css')"> --}}
+    @include('includes.css')
 
 </head>
 
@@ -48,7 +50,7 @@
 <!-- =================nav bar Section Start=================== -->
 <nav class="navbar navbar-expand-lg main_menu">
     <div class="container">
-      <a class="navbar-brand" href="#"><img src="{{ asset('frontend_assets/images/logo.png')}}" alt="logo.png"></a>
+      <a class="navbar-brand" href="#"><img src="{{ asset('uploads/settings') }}/{{ $settings->logo }}" alt="logo.png"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
       </button>

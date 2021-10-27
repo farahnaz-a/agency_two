@@ -9,6 +9,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.css" integrity="sha512-5m1IeUDKtuFGvfgz32VVD0Jd/ySGX7xdLxhqemTmThxHdgqlgPdupWoSN8ThtUSLpAGBvA8DY2oO7jJCrGdxoA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   {{-- data table --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
@@ -16,7 +18,7 @@
   
   <link rel="stylesheet" href="{{ asset('dashboard/css/font-awesome.min.css') }}">
   <link rel="stylesheet" href="{{ asset('dashboard/css/bootstrap.css') }}">
-  <title>Admin Panel</title>
+  <title>@yield('title')</title>
   <link rel="shortcut icon" type="image/x-icon" href=" {{ asset('dashboard/images/dash-logo-color.png') }}">
   <link href=" {{ asset('dashboard/css/icon.css') }}" rel="stylesheet">
   <!-- BEGIN: VENDOR CSS-->
@@ -31,6 +33,13 @@
       position: relative;
       z-index: inherit;
     }
+    .edit-btn{
+      background:#17a2b8;
+    }
+    .edit-btn:hover{
+      background:#17a2b8;
+    }
+
   </style>
 </head>
 <!-- END: Head-->
@@ -45,12 +54,12 @@
       <div class="navbar navbar-fixed p-0"> 
         <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-light shadow">
           <div class="nav-wrapper">
-            <div class="header-search-wrapper hide-on-med-and-down"><i class="material-icons">search</i>
+            {{-- <div class="header-search-wrapper hide-on-med-and-down"><i class="material-icons">search</i>
               <input class="header-search-input z-depth-2" type="text" name="Search" placeholder="Enter Text" data-search="template-list">
               <ul class="search-list collection display-none"></ul>
-            </div>
+            </div> --}}
             <ul class="navbar-list right">
-              <li class="hide-on-med-and-down">
+              {{-- <li class="hide-on-med-and-down">
                 <a class="waves-effect waves-block waves-light toggle-fullscreen" href="javascript:void(0);">
                   <i class="material-icons">settings_overscan</i>
                 </a>
@@ -62,19 +71,19 @@
               <li>
                 <a class="waves-effect waves-block waves-light notification-button" href="javascript:void(0);" data-target="notifications-dropdown">
                   <i class="material-icons">notifications_none<small class="notification-badge">5</small></i></a>
-              </li>
+              </li> --}}
               <li>
                 <a class="waves-effect waves-block waves-light profile-button" href="profile.html" data-target="profile-dropdown">
-                  <span><b>Admin</b></span>
+                  <span><b> {{ Auth::user()->name }} </b></span>
                   <span class="avatar-status avatar-online">
-                    <img src=" {{ asset('dashboard/images/admin-avatar.png') }}" alt="avatar"><i></i>
+                    <img src=" {{ Auth::user()->profile_photo_url }}" alt="avatar"><i></i>
                   </span>
                 </a>
               </li>
             </ul>
             
             <!-- notifications-dropdown-->
-            <ul class="dropdown-content" id="notifications-dropdown">
+            {{-- <ul class="dropdown-content" id="notifications-dropdown">
               <li>
                 <h6>NOTIFICATIONS<span class="new badge">5</span></h6>
               </li>
@@ -118,25 +127,29 @@
                   <br><small class="notification-text"> USA Server is down due to hight CPU usage.</small>
                 </a>
               </li>
-            </ul>
+            </ul> --}}
             <!-- profile-dropdown-->
             <ul class="dropdown-content" id="profile-dropdown">
               <li>
-                <a class="grey-text text-darken-1" href="profile.html">
+                <a class="grey-text text-darken-1" href="{{  url('user/profile') }}">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user mr-50"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> 
                   <span class="menu-title-nav">Profile</span>
                 </a>
               </li>
               <li>
-                <a class="grey-text text-darken-1" href="user-login.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-power mr-50"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line>
-                  </svg> 
-                  <span class="menu-title-nav">Logout</span>
-                </a>
+                <form method="POST" action="{{ route('logout') }}">
+                  @csrf
+                  {{-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"><i class="me-50" data-feather="power"></i>Logout</a> --}}
+                  <a class="grey-text text-darken-1" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                    <svg style="margin-left: 9px; margin-top: -10px;" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-power mr-50"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line>
+                    </svg> 
+                    <span class="menu-title-nav">Logout</span>
+                  </a>
+                </form>
               </li>
             </ul>
           </div>
-          <nav class="display-none search-sm">
+          {{-- <nav class="display-none search-sm">
             <div class="nav-wrapper">
               <form id="navbarForm">
                 <div class="input-field search-input-sm">
@@ -146,7 +159,7 @@
                 </div>
               </form>
             </div>
-          </nav>
+          </nav> --}}
         </nav>
       </div>
     </header>

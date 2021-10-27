@@ -8,92 +8,74 @@
 @section('testimonialsIndex')
     active
 @endsection
-
-{{-- breadcrumb  --}}
-@section('breadcrumbs')
-    <div class="row breadcrumbs-top">
-        <div class="col-12">
-            <h2 class="content-header-title float-start mb-0">Admin Dashboard</h2>
-            <div class="breadcrumb-wrapper">
-                <ol class="breadcrumb"> 
-                    <li class="breadcrumb-item">
-                        <a href="">Testimonial</a>
-                    </li>
-                    {{-- <li class="breadcrumb-item active">Layout Empty
-                    </li> --}}
-                </ol>
-            </div>
-        </div>
-    </div>
+@section('activeTestimonialsMenu')
+    active
 @endsection
+
 {{-- content --}}
 @section('content')
-    <div class="row justify-content-center">
-        <div class="col-md-8 col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Edit Testimonial</h4>
-                    @if (session('warning'))
-                        <div class="alert alert-warning">{{ session('warning') }}</div>
-                    @endif
+<section class="banner-main-section py-5" id="main">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="dash-ad-title m-0 mb-3">Admin Dashboard | <span class="dash-span-title"> Edit Testimonial</span></h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card shadow">
+                            <div class="card-header">
+                                <h4 class="card-title">Edit Testimonial</h4>
+                            </div>
+                            <div class="card-body">
+                                <form action="{{ route('testimonials.update',$testimonial->id) }}" method="POST"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="form-group">
+                                        <label for="first-name-vertical">Name </label>
+                                        <input type="text" id="first-name-vertical" class="form-control" name="name" value="{{ $testimonial->name }}" >
+                                        @error('name')
+                                            <span class="text-danger"> {{ $message }} *</span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="image">Image</label>
+                                        <input type="file" id="image" class="form-control" name="image">
+                                        @error('image')
+                                            <span class="text-danger"> {{ $message }} *</span>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-1">
+                                        <img class="w-25"
+                                            src="{{ asset('uploads/testimonials') }}/{{ $testimonial->image }}" alt="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="designation">Designation </label>
+                                        <input type="text" id="designation" class="form-control" name="designation" value="{{ $testimonial->designation }}" >
+                                        @error('designation')
+                                            <span class="text-danger"> {{ $message }} *</span>
+                                        @enderror
+                                    </div>
 
-                </div>
-                <div class="card-body">
-                    <form class="form form-vertical" action="{{ route('testimonials.update',$testimonial->id) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="mb-1">
-                                    <label class="form-label" for="first-name-vertical">Name </label>
-                                    <input type="text" id="first-name-vertical" class="form-control" name="name" value="{{ $testimonial->name }}" >
-                                    @error('name')
-                                        <span class="text-danger"> {{ $message }} *</span>
-                                    @enderror
-                                </div>
-                            </div>
-                            
-                            <div class="col-12">
-                                <div class="mb-1">
-                                    <label class="form-label" for="password-vertical">Background Image</label>
-                                    <input type="file" id="password-vertical" class="form-control" name="image">
-                                    @error('image')
-                                        <span class="text-danger"> {{ $message }} *</span>
-                                    @enderror  
-                                </div>
-                                <div class="mb-1">
-                                    <img  class="w-25" src="{{ asset('uploads/testimonials')}}/{{ $testimonial->image }}" alt=""> 
-                                </div>
-                            </div>
-                           
-                            <div class="col-12">
-                                <div class="mb-1">
-                                    <label class="form-label" for="designation">Designation </label>
-                                    <input type="text" id="designation" class="form-control" name="designation" value="{{ $testimonial->designation }}" >
-                                    @error('designation')
-                                        <span class="text-danger"> {{ $message }} *</span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <div class="mb-1">
-                                    <label class="form-label" for="message"> Message </label>
-                                    <textarea name="message" id="message" class="form-control" name="message"> {{ $testimonial->message }} </textarea>
-                                    @error('message')
-                                        <span class="text-danger"> {{ $message }} *</span>
-                                    @enderror
-                                </div>
-                            </div>
-                            
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary me-1 waves-effect waves-float waves-light">Update</button>
+                                    <div class="form-group">
+                                        <label for="message"> Message </label>
+                                        <textarea name="message" id="message" class="form-control" name="message"> {{ $testimonial->message }} </textarea>
+                                        @error('message')
+                                            <span class="text-danger"> {{ $message }} *</span>
+                                        @enderror
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-admin mt-2">Update</button>
+                                </form>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
 @endsection

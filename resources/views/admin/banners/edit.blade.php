@@ -8,7 +8,7 @@
 @section('bannersIndex')
     active
 @endsection
-@section('activeMenu')
+@section('activeBannersMenu')
     active
 @endsection
 

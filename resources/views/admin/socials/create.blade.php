@@ -9,70 +9,53 @@
 @section('socialsCreate')
     active
 @endsection
-
-{{-- breadcrumb  --}}
-@section('breadcrumbs')
-    <div class="row breadcrumbs-top">
-        <div class="col-12">
-            <h2 class="content-header-title float-start mb-0">Admin Dashboard</h2>
-            <div class="breadcrumb-wrapper">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="">Social</a>
-                    </li>
-                    {{-- <li class="breadcrumb-item active">Layout Empty
-                    </li> --}}
-                </ol>
-            </div>
-        </div>
-    </div>
+@section('activeSocialsMenu')
+active
 @endsection
 
 {{-- content --}}
 @section('content')
-    <div class="row justify-content-center">
-        <div class="col-md-8 col-12">
-            <div class="card">
+<section class="banner-main-section py-5" id="main">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="dash-ad-title m-0 mb-3">Admin Dashboard | <span class="dash-span-title"> Create Social</span></h2>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="card shadow">
                 <div class="card-header">
-                    <h4 class="card-title">Create Social</h4>
-                    @if (session('warning'))
-                        <div class="alert alert-warning">{{ session('warning') }}</div>
-                    @endif
-
+                  <h4 class="card-title">Create Social</h4>
                 </div>
                 <div class="card-body">
-                    <form class="form form-vertical" action="{{ route('socials.store') }}" method="POST">
-                        @csrf
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="mb-1">
-                                    <label class="form-label" for="social_icon">Social Icons</label>
-                                    <input type="text" id="social_icon" class="form-control" name="social_icon" placeholder="Enter Icon URL">
-                                    @error('social_icon')
-                                        <span class="text-danger"> {{ $message }} *</span>
-                                    @enderror  
-                                </div>
-                            </div>
-                            
-                            <div class="col-12">
-                                <div class="mb-1">
-                                    <label class="form-label" for="social_link">Social Link</label>
-                                    <input type="text" id="social_link" class="form-control" name="social_link" placeholder="Enter Social Link">
-                                    @error('social_link')
-                                    <span class="text-danger"> {{ $message }} *</span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary me-1 waves-effect waves-float waves-light">Submit</button>
-                            </div>
-                            
-                            
-                        </div>
+                  <form action="{{ route('socials.store') }}" method="POST" enctype="multipart/form-data">               
+                    @csrf
+                      <div class="form-group">
+                        <label class="form-label" for="social_icon">Social Icons</label>
+                        <input type="text" id="social_icon" class="form-control" name="social_icon" placeholder="Enter Icon URL">
+                        @error('social_icon')
+                            <span class="text-danger"> {{ $message }} *</span>
+                        @enderror 
+                    </div>
+                      <div class="form-group">
+                        <label class="form-label" for="social_link">Social Link</label>
+                        <input type="text" id="social_link" class="form-control" name="social_link" placeholder="Enter Social Link">
+                        @error('social_link')
+                        <span class="text-danger"> {{ $message }} *</span>
+                        @enderror
+                      </div>
+                        
+                      <button type="submit" class="btn btn-admin">Submit</button>
                     </form>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
+  </section>
 @endsection

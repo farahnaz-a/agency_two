@@ -8,68 +8,54 @@
 @section('socialsIndex')
     active
 @endsection
-
-{{-- breadcrumb  --}}
-@section('breadcrumbs')
-    <div class="row breadcrumbs-top">
-        <div class="col-12">
-            <h2 class="content-header-title float-start mb-0">Admin Dashboard</h2>
-            <div class="breadcrumb-wrapper">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="">Social</a>
-                    </li>
-                    {{-- <li class="breadcrumb-item active">Layout Empty
-                    </li> --}}
-                </ol>
-            </div>
-        </div>
-    </div>
+@section('activeSocialsMenu')
+    active
 @endsection
+ 
 {{-- content --}}
 @section('content')
-    <div class="row justify-content-center">
-        <div class="col-md-8 col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Edit Social</h4>
-                    @if (session('warning'))
-                        <div class="alert alert-warning">{{ session('warning') }}</div>
-                    @endif
-
-                </div>
-                <div class="card-body">
-                    <form class="form form-vertical" action="{{ route('socials.update',$social->id) }}" method="POST">
-                        @csrf
-                        @method('PUT')
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="mb-1">
-                                    <label class="form-label" for="social_icon">Social URL</label>
-                                    <input type="text" id="social_icon" class="form-control" name="social_icon" value="{{ $social->social_icon }}">
-                                    @error('social_icon')
-                                        <span class="text-danger"> {{ $message }} *</span>
-                                    @enderror
-                                </div>
+<section class="banner-main-section py-5" id="main">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="dash-ad-title m-0 mb-3">Admin Dashboard | <span class="dash-span-title"> Edit Social</span></h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card shadow">
+                            <div class="card-header">
+                                <h4 class="card-title">Edit Social</h4>
                             </div>
-
-                            <div class="col-12">
-                                <div class="mb-1">
-                                    <label class="form-label" for="social_link">Social Link</label>
-                                    <input type="text" id="social_link" class="form-control" name="social_link" value="{{ $social->social_link }}">
-                                    @error('social_link')
-                                        <span class="text-danger"> {{ $message }} *</span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary me-1 waves-effect waves-float waves-light">Update</button>
+                            <div class="card-body">
+                                <form action="{{ route('socials.update',$social->id) }}" method="POST"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="form-group">
+                                        <label for="social_icon">Social URL</label>
+                                        <input type="text" id="social_icon" class="form-control" name="social_icon" value="{{ $social->social_icon }}">
+                                        @error('social_icon')
+                                            <span class="text-danger"> {{ $message }} *</span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="social_link">Social Link</label>
+                                        <input type="text" id="social_link" class="form-control" name="social_link" value="{{ $social->social_link }}">
+                                        @error('social_link')
+                                            <span class="text-danger"> {{ $message }} *</span>
+                                        @enderror
+                                    </div>
+                                    <button type="submit" class="btn btn-admin mt-2">Update</button>
+                                </form>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
 @endsection

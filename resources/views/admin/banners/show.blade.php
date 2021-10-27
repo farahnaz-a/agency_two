@@ -9,7 +9,7 @@
 @section('bannersIndex')
     active
 @endsection
-@section('activeMenu')
+@section('activeBannersMenu')
     active
 @endsection
 
@@ -96,7 +96,8 @@
                                                         </tr>
                                                     </tbody>
                                                 </table>
-                                                <a class="btn btn-primary mt-1" href="{{ route('banners.index') }}">Return Back</a>
+                                                <a class="btn mt-1" href="{{ route('banners.index') }}">Return Back</a>
+                                                <a class="btn edit-btn mt-1" href="{{ route('banners.edit', $banner->id) }}">Edit</a>
                                             </div>
                                         </div>
                                     </div>

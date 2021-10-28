@@ -73,8 +73,22 @@ active
         </div>
       </div>
     </div>
-    <div id="chart">
 
+    
+    <div class="container">
+      <div class="row">
+        <div id="client" class="col-12">
+    
+        </div>
+        <div class="col-6">
+          <div id="service">
+
+          </div>
+        </div>
+        <div class="col-6" >
+
+        </div>
+      </div>
     </div>
   </section>
     
@@ -84,8 +98,8 @@ active
           
           var options = {
           series: [{
-            name: "Desktops",
-            data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+            name: "Total Clint",
+            data: @json($clientCount)
         }],
           chart: {
           height: 350,
@@ -101,7 +115,7 @@ active
           curve: 'straight'
         },
         title: {
-          text: 'Product Trends by Month',
+          text: 'Clint count by days',
           align: 'left'
         },
         grid: {
@@ -111,12 +125,89 @@ active
           },
         },
         xaxis: {
-          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+          categories: @json($days),
         }
         };
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        var chart = new ApexCharts(document.querySelector("#client"), options);
         chart.render();
-</script>
-    
+
+
+    // bar chart 
+    var options = {
+          series: [{
+          name: 'Servings',
+          data: @json($messageCount)
+        }],
+          annotations: {
+          points: [{
+            x: 'Bananas',
+            seriesIndex: 0,
+            label: {
+              borderColor: '#775DD0',
+              offsetY: 0,
+              style: {
+                color: '#fff',
+                background: '#775DD0',
+              },
+              text: 'Bananas are good',
+            }
+          }]
+        },
+        chart: {
+          height: 350,
+          type: 'bar',
+        },
+        plotOptions: {
+          bar: {
+            borderRadius: 10,
+            columnWidth: '50%',
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          width: 2
+        },
+        
+        grid: {
+          row: {
+            colors: ['#fff', '#f2f2f2']
+          }
+        },
+        xaxis: {
+          labels: {
+            rotate: -45
+          },
+          categories: @json($days),
+          tickPlacement: 'on'
+        },
+        yaxis: {
+          title: {
+            text: 'Servings',
+          },
+        },
+        fill: {
+          type: 'gradient',
+          gradient: {
+            shade: 'light',
+            type: "horizontal",
+            shadeIntensity: 0.25,
+            gradientToColors: undefined,
+            inverseColors: true,
+            opacityFrom: 0.85,
+            opacityTo: 0.85,
+            stops: [50, 0, 100]
+          },
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#service"), options);
+        chart.render();
+
+
+
+    </script>
+        
 @endsection

@@ -5,7 +5,7 @@
         <div class="row" data-aos="fade-up"
         data-aos-anchor-placement="center-bottom">
             <div class="col-lg-4"><div class="footer__logo">
-                <img src=" {{ asset('uploads/settings') }}/{{ $settings->logo }}" alt="logo.png">
+                <img width="100px" src=" {{ asset('uploads/settings') }}/{{ $settings->logo }}" alt="logo.png">
      
                    <div class="footer__icon mt-35">
                     @foreach ($socials as $item)

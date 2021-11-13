@@ -1,1 +1,1 @@
-<img src="{{ asset('uploads/settings') }}/{{ generalSettings()->logo }}" alt="">
+<img class="100px" src="{{ asset('uploads/settings') }}/{{ generalSettings()->logo }}" alt="">

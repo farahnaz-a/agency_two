@@ -13,8 +13,8 @@
            <div class="col-lg-7 col-md-12" data-aos="zoom-in-down">
             <div class="about-text">
               @php
-              $title     = explode(" " , $abouts->title);
-              $lastIndex    = array_pop($title);
+                  $title     = explode(" " , $abouts->title);
+                  $lastIndex    = array_pop($title);
                   $title    = implode(" ", $title);
               @endphp
               <h2>{{ $title }} <span>{{ $lastIndex }}</span></h2>

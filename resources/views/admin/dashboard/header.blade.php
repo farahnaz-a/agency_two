@@ -75,9 +75,9 @@
               <li>
                 <a class="waves-effect waves-block waves-light profile-button" href="profile.html" data-target="profile-dropdown">
                   <span><b> {{ Auth::user()->name }} </b></span>
-                  <span class="avatar-status avatar-online">
-                    <img src=" {{ Auth::user()->profile_photo_url }}" alt="avatar"><i></i>
-                  </span>
+                  {{-- <span class="avatar-status avatar-online">
+                    {{-- <img src=" {{ Auth::user()->profile_photo_url }}" alt="avatar"><i></i> --}}
+                  {{-- </span>   --}}
                 </a>
               </li>
             </ul>

@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="{{ asset('dashboard/css/font-awesome.min.css') }}">
   <link rel="stylesheet" href="{{ asset('dashboard/css/bootstrap.css') }}">
   <title>@yield('title')</title>
-  <link rel="shortcut icon" type="image/x-icon" href=" {{ asset('dashboard/images/dash-logo-color.png') }}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('uploads/settings/favicon.png') }}">
   <link href=" {{ asset('dashboard/css/icon.css') }}" rel="stylesheet">
   <!-- BEGIN: VENDOR CSS-->
   <link rel="stylesheet" type="text/css" href=" {{ asset('dashboard/vendors/vendors.min.css') }}">
@@ -39,16 +39,19 @@
     .edit-btn:hover{
       background:#17a2b8;
     }
+    .dropdown-menu.show {
+       left: 0 !important; 
+}
 
   </style>
 </head>
 <!-- END: Head-->
 <body >
 <!-- preloader start -->
-<div class="preloader">
+{{-- <div class="preloader">
   <div class="box"></div>
   <div class="box2"></div>
-</div>
+</div> --}}
     <!-- BEGIN: Header-->
     <header class="page-topbar" id="header">
       <div class="navbar navbar-fixed p-0"> 

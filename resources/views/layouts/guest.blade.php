@@ -20,5 +20,9 @@
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
+        
+<div style="text-align: center;" >
+    <span style="height: 300px">COPYRIGHT © 2021 <a href="https://soclose.co/" target="_blank"> SoClose, </a> All rights reserved.</span>
+</div>
     </body>
 </html>

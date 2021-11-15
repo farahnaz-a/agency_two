@@ -4,8 +4,8 @@
         <div class="brand-sidebar">
           <h1 class="logo-wrapper">
             <a class="brand-logo darken-1" href="{{ route('admin.dashboard') }}">
-              <img class="hide-on-med-and-down " src="{{ asset('dashboard/images/dash-logo-color.png') }}" alt="materialize logo">
-              <span class="logo-text hide-on-med-and-down">Dashboard</span>
+              <img class="hide-on-med-and-down " src="{{ asset('uploads/settings') }}/{{ generalSettings()->favicon }}" alt="materialize logo">
+              <span class="logo-text hide-on-med-and-down text-dark">SoClose</span>
             </a>
             <a class="navbar-toggler" href="#"><i class="material-icons">radio_button_checked</i></a>
           </h1>
@@ -33,6 +33,31 @@
               <span class="menu-title" data-i18n="Dashboard">Dashboard</span>
             </a>
           </li>
+          {{-- New User menu  --}} 
+          <li class="bold @yield('activeUserMenu')">
+            <a class="collapsible-header waves-effect waves-cyan" href="JavaScript:void(0)">
+              <i class="fas fa-user"></i>
+              <span class="menu-title" data-i18n="Banners">Users</span>
+            </a>
+            <div class="collapsible-body">
+              <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+                <li>
+                  <a href="{{ route('user.index') }}" class="@yield('usersIndex')">
+                    <i class="material-icons">radio_button_unchecked</i>
+                    <span data-i18n="List">List</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ route('user.create') }}" class="@yield('usersCreate')">
+                    <i class="material-icons">radio_button_unchecked</i>
+                    <span data-i18n="Create">Create</span>
+                  </a>
+                </li> 
+              </ul>
+            </div>
+          </li>
+
+          {{-- banner menu  --}}
           <li class="bold @yield('activeBannersMenu')">
             <a class="collapsible-header waves-effect waves-cyan" href="JavaScript:void(0)">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-flag"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
@@ -168,13 +193,13 @@
           </li>
           <li class="bold">
             <a class="waves-effect waves-cyan @yield('settingsIndex')" href="{{ route('settings.index') }}">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              <i class="fas fa-cogs"></i>
               <span class="menu-title" data-i18n="Support">General Setting</span>
             </a>
           </li>
           <li class="bold">
             <a class="waves-effect waves-cyan @yield('colorsIndex')" href="{{ route('colors.index') }}">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              <i class="fas fa-user-cog"></i>
               <span class="menu-title" data-i18n="Support">Colors Setting</span>
             </a>
           </li>

@@ -34,6 +34,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
     // Admin Controller
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/list-user', [AdminController::class, 'indexUser'])->name('user.index');
+    Route::get('/create-user', [AdminController::class, 'createUser'])->name('user.create');
+    Route::post('/store-user', [AdminController::class, 'storeUser'])->name('user.store');
+    Route::post('/delete-user', [AdminController::class, 'deleteUser'])->name('user.destroy');
 
     // Banner Controller
     Route::resource('banners', BannerController::class);

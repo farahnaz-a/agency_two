@@ -2,24 +2,25 @@
 
 {{-- title --}}
 @section('title')
-    {{ config('app.name') }} | Social  
+    {{ config('app.name') }} | User 
 @endsection
 
 {{-- menu active --}}
-@section('socialsIndex')
-    active
-@endsection
-@section('activeSocialsMenu')
+@section('activeUserMenu')
     active
 @endsection
  
-
+@section('usersIndex')
+    active
+@endsection
+ 
+ 
 {{-- content --}}
 @section('content')
 <section class="banner-main-section py-5 all-pages-input" id="main">
     <div class="row">
         <div class="col-12">
-            <h2 class="dash-ad-title m-0 mb-3">Admin Dashboard | <span class="dash-span-title"> Social List</span></h2>
+            <h2 class="dash-ad-title m-0 mb-3">Admin Dashboard | <span class="dash-span-title"> User List</span></h2>
         </div>
     </div>
     <div class="container">
@@ -29,14 +30,13 @@
                     <div class="col-lg-12 col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">List of all the Social</h4>
+                                <h4 class="card-title">List of all Users</h4>
                                 @if (session('success'))
                                 <br>
                                      <div class="alert alert-success m-0">{{ session('success') }}</div>
                                 @endif
                             </div>
-                            <div class="card-body">
-
+                            <div class="card-body"> 
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="table-responsive--custom">
@@ -47,30 +47,23 @@
                                                         <th class="sorting_asc" rowspan="1" colspan="1"
                                                             style="width: 19.5156px;">Sl.</th>
                                                         <th class="sorting" rowspan="1" colspan="1"
-                                                            style="width: 88.1406px;">Socials Icon</th>
+                                                            style="width: 88.1406px;">Name</th> 
                                                         <th class="sorting" rowspan="1" colspan="1"
-                                                            style="width: 141px;">Socials Link</th>
+                                                            style="width: 141px;">Email</th>
                                                         <th class="sorting" rowspan="1" colspan="1"
                                                             style="width: 59.3906px;">Actions</th>
-                                                     </tr>
+                                                    </tr>
                                                 </thead>
-                                                <tbody>
-                                                    @php
-                                                    $i= 1;   
-                                                    @endphp
-                                                    @foreach ($socials as $item)
+                                                <tbody> 
+                                                    @foreach ($users as $item)
                                                     <tr role="row">
-                                                        <td> {{ $i }}</td>
+                                                        <td> {{ $loop->index + 1 }}</td>
                                                         <td>
-                                                            <span class=""> {!! $item->social_icon !!} </span>
+                                                            <span class=""> {{ $item->name }} </span>
                                                         </td>
-                                                                                                            
                                                         <td>
-                                                            <span class="">  {{ $item->social_link }} </span>
-                                                        </td>
-                                                                                                            
-                                                         
-                                                        
+                                                            <span class=""> {{ $item->email }} </span>
+                                                        </td> 
                                                         <td>
                                                             <div class="navbar">
                                                                 <a href="#" id="navDropDownLink" data-toggle="dropdown"
@@ -87,11 +80,11 @@
                                                                 </a>
                                                                 <div class="dropdown-menu drp-menu"
                                                                     aria-labelledby="navDropDownLink">
-                                                                    <a class="dropdown-item" href="{{ route('socials.show', $item->id) }}">
+                                                                    {{-- <a class="dropdown-item" href="{{ route('testimonials.show', $item->id) }}">
                                                                         <i class="far fa-eye"></i>
                                                                         <span>Show</span>
                                                                     </a>
-                                                                    <a class="dropdown-item" href="{{ route('socials.edit', $item->id) }}">
+                                                                    <a class="dropdown-item" href="{{ route('testimonials.edit', $item->id) }}">
                                                                         <svg xmlns="http://www.w3.org/2000/svg"
                                                                             width="14" height="14" viewBox="0 0 24 24"
                                                                             fill="none" stroke="currentColor"
@@ -103,10 +96,10 @@
                                                                             </path>
                                                                         </svg>
                                                                         <span>Edit</span>
-                                                                    </a>
-                                                                    <form class="dropdown-item" action="{{ route('socials.destroy', $item->id) }}" method="POST">
-                                                                        @csrf
-                                                                        @method('DELETE')
+                                                                    </a> --}}
+                                                                    <form class="dropdown-item" action="{{ route('user.destroy') }}" method="POST">
+                                                                        @csrf  
+                                                                        <input type="hidden" name="id" value="{{ $item->id }}">
                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash me-50"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                                                                         <button type="submit" class="btn text-dark p-0 m-0" style=" box-shadow:none; background:none">Delete</button>
                                                                     </form>
@@ -115,9 +108,7 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                    @php
-                                                        $i++;
-                                                    @endphp
+                                                    
                                                     @endforeach
                                                     
                                                 </tbody>
@@ -132,4 +123,5 @@
             </div>
         </div>
 </section>
+ 
 @endsection

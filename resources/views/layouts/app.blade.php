@@ -42,5 +42,13 @@
         @stack('modals')
 
         @livewireScripts
+
+        <footer class="page-footer footer footer-static footer-light navbar-shadow">
+            <div class="footer-copyright">
+              <div style="text-align: center;" >
+                <span style="height: 300px">COPYRIGHT © 2021 <a href="https://soclose.co/" target="_blank"> SoClose, </a> All rights reserved.</span>
+              </div>
+            </div>
+          </footer>
     </body>
 </html>

@@ -39,7 +39,7 @@
 
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <div class="table-responsive">
+                                            <div class="table-responsive--custom">
                                                 <table id="data_table" class="table table-bordered dataTable no-footer "
                                                     role="grid" aria-describedby="data_table_info">
                                                     <thead>
@@ -69,7 +69,7 @@
 
                                                                 <td>
                                                                     <img src="{{ asset('uploads/services') }}/{{ $item->image }}"
-                                                                        width="150" alt="Banner">
+                                                                        width="110" alt="Banner">
                                                                 </td>
                                                                 <td>
                                                                     <div class="navbar">

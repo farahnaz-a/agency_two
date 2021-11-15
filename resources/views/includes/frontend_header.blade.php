@@ -50,7 +50,7 @@
 <!-- =================nav bar Section Start=================== -->
 <nav class="navbar navbar-expand-lg main_menu">
     <div class="container">
-      <a class="navbar-brand" href="#"><img width="100px" src="{{ asset('uploads/settings') }}/{{ $settings->logo }}" alt="logo.png"></a>
+      <a class="navbar-brand" href="#"><img width="70px" src="{{ asset('uploads/settings') }}/{{ $settings->logo }}" alt="logo.png"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
       </button>

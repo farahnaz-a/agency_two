@@ -3,7 +3,7 @@
 active
 @endsection
 @section('content')
-<section class="main-section py-5" id="main">
+  <section class="main-section py-5" id="main">
     <div class="row">
       <div class="col-12">
         <h2 class="dash-ad-title m-0 mb-3">Admin Dashboard |</h2>

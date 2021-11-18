@@ -1,1 +1,1 @@
-<img width="100px" src="{{ asset('uploads/settings') }}/{{ generalSettings()->favicon }}" alt="">
+<img width="100px" src="{{ asset('uploads/settings/darklogo.png') }} alt="">

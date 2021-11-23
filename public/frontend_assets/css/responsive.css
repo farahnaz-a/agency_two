@@ -21,10 +21,6 @@
     .banner__play {
       font-size: 14px;
     }
- 
-    .play__responsive{
-        left: 220px  !important;
-    }
 
     .main{
         margin-top: 20px;
@@ -58,15 +54,11 @@
     }
 
     nav ul{
-
         background-color: white;
         width: 100%;
         text-align: center;
         padding: 20% 0 0 0;
-        border-radius: 5px;
         height: 100vh;
-
-     
     }
     nav ul li a{
         color: #000000 !important;
@@ -99,9 +91,6 @@
     }
     .banner__play {
       font-size: 14px;
-    }
-    .play__responsive{
-        left: 480px !important;
     }
 
     .main{
@@ -139,19 +128,7 @@
     }
 
     nav ul{
-        background-color: white;
-        text-align: center;
         padding: 40% 0 0 0;
-        border-radius: 5px;
-        height: 100vh;
-
-     
-    }
-    nav ul li a{
-        color: #000000 !important;
-    }   
-    nav ul li a:hover{
-      color: #fa8072 !important;
     }
     nav ul li a::after,
     nav ul li a::before{
@@ -176,62 +153,19 @@
     .banner__play {
       font-size: 14px;
     }
-    .play__responsive{
-        left: 390px  !important;
-    }
 
      .main{
          margin-top: 20px;
      }   
-
-
 }
 /* extra small device */
 @media (max-width:575px){
     .banner__overlay{
         padding: 200px 0 150px 0;
     }
-    nav{
-        background: rgba(0, 0, 0, 0.5);
-    }
-    nav  a img{
-        width: 50% !important;
+    nav a img{
         padding-left: 15px;
     }
-    nav button i{
-       color: #ffffff;
-    }
-    nav .container{
-        padding: 0 !important;
-    }
-
-    nav ul{
-        background-color: white;
-        text-align: center;
-        padding: 40% 0 0 0;
-        border-radius: 5px;
-        height: 100vh;
-
-     
-    }
-    nav ul li a{
-        color: #000000 !important;
-    }   
-    nav ul li a:hover{
-      color: #fa8072 !important;
-    }
-    nav ul li a::after,
-    nav ul li a::before{
-        display: none;
-    } 
-    #banner__part{
-        text-align: center;
-
-    }
-    .banner__overlay h6{
-        font-size: 14px;
-        font-weight: 400;
-      }
     .banner__overlay h1{
       font-size: 42px;
     }
@@ -242,12 +176,6 @@
     .banner__play {
       font-size: 14px;
     }
-    .play__responsive {
-        right: 352px !important;
-    }
-     .main{
-         margin-top: 20px;
-     } 
      #service__part{
          margin-top: 35px;
      }  
@@ -255,8 +183,6 @@
         font-size: 30px;
         font-weight: 500;
         margin-top: 10px;
-
-    
     }
     .service h2{
         margin-top: 25px;

@@ -51,10 +51,10 @@
                                     @error('message')
                                         <span class="text-danger"> {{ $message }} *</span>
                                     @enderror
-                                    <textarea name="message" class="form-control"
+                                    <textarea name="message" class="form-control rounded-0"
                                         placeholder="Your Massage"></textarea>
                                     
-                                    <button class="submit-btn py-2" type="submit"> Submit</button>
+                                    <button class="submit-btn rounded-0 py-2" type="submit"> Submit</button>
                                 </div>
                             </div>
                         </div>

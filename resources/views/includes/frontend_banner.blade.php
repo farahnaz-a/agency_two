@@ -12,12 +12,12 @@
                     @endphp
                 <h1 data-aos="zoom-in"> {{ $title }} <span class="service__color">{{ $lastIndex }}</span></h1>
                 <p class="mt-30 pb-30" data-aos="fade-right"> {{ $banners->short_description }}</p>
-                    <div class="d-flex align-item-center justify-content-lg-start justify-content-center banner_button" data-aos="zoom-in-up">
-                        <a class="after btn" href="{{ $banners->button_url }}"> {{ $banners->button_text }} </a>
-                        <a  id="play-video"  class=" ml-10 video-play-button venobox play__responsive" data-autoplay="true" data-vbtype="video" href="{{ $banners->video_url }}">
+                <div class="d-flex flex-wrap align-items-center justify-content-lg-start justify-content-center banner_button" data-aos="zoom-in-up">
+                    <a class="after btn" href="{{ $banners->button_url }}"> {{ $banners->button_text }} </a>
+                    <a id="play-video"  class="ml-30 video-play-button venobox play__responsive" data-autoplay="true" data-vbtype="video" href="{{ $banners->video_url }}">
                         <span></span>
-                        </a>
-                    </div>
+                    </a>
+                </div>
              </div>
          </div>
       </div>

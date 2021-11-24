@@ -37,14 +37,14 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required | unique:contacts',
-            'message' => 'required',
-        ]);
+        // $request->validate([
+        //     'name' => 'required',
+        //     'email' => 'required | unique:contacts',
+        //     'message' => 'required',
+        // ]);
 
-        $contact = Contact::create($request->except('_token') + ['created_at' => Carbon::now()]);
-        return back()->with('success', 'Sent Successfully');
+        // $contact = Contact::create($request->except('_token') + ['created_at' => Carbon::now()]);
+        // return back()->with('success', 'Sent Successfully');
     }
 
     /**

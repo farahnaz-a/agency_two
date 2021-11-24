@@ -44,6 +44,8 @@
 }
 
   </style>
+
+  @stack('css')
 </head>
 <!-- END: Head-->
 <body >

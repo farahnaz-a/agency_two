@@ -21,7 +21,7 @@
             <h2 class="dash-ad-title m-0 mb-3">Admin Dashboard | <span class="dash-span-title"> Testimonials List</span></h2>
         </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="row justify-content-center">

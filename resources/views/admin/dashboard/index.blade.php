@@ -80,7 +80,7 @@ active
         <div id="client" class="col-12">
     
         </div>
-        <div class="col-6">
+        <div class="col-12 mt-4">
           <div id="service">
 
           </div>
@@ -211,3 +211,12 @@ active
     </script>
         
 @endsection
+@push('css')
+
+<style>
+  .apexcharts-zoomin-icon, .apexcharts-zoomout-icon, .apexcharts-zoom-icon, .apexcharts-pan-icon, .apexcharts-reset-icon{
+      display: none;
+  }
+</style>
+    
+@endpush

@@ -29,8 +29,8 @@
                     @if (session('success'))
                         <div class="alert alert-success">{{ session('success') }}</div>
                     @endif
-                    <h1 class="msg">Massage Us</h1>
-                    <form action="{{ route('contacts.store') }}" method="POST">
+                    <h1 class="msg">Message Us</h1>
+                    <form action="{{ route('message.store') }}" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-lg-6">
@@ -52,7 +52,7 @@
                                         <span class="text-danger"> {{ $message }} *</span>
                                     @enderror
                                     <textarea name="message" class="form-control rounded-0"
-                                        placeholder="Your Massage"></textarea>
+                                        placeholder="Your Message"></textarea>
                                     
                                     <button class="submit-btn rounded-0 py-2" type="submit"> Submit</button>
                                 </div>

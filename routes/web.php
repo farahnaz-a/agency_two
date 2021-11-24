@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',  [FrontendController::class, 'index'])->name('home');
+Route::post('/message-save', [FrontendController::class, 'messageSave'])->name('message.store');
  
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
